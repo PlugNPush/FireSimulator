@@ -6,10 +6,39 @@
 //  Copyright © 2019 Groupe MINASTE. All rights reserved.
 //
 
-#include <stdio.h>
+
+#include "Header files/main.h"
+
+Element field[500][500];
+int sizex, sizey;
+
+void initField(){
+    int i, j;
+    for (i = 0; i < sizex; i++) {
+        for (j = 0; j < sizey; j++) {
+            field[i][j] = dropElement();
+        }
+    }
+}
+
+void printField(){
+    int i, j;
+    for (i = 0; i < sizex; i++) {
+        for (j = 0; j < sizey; j++) {
+            printElement(field[i][j]);
+            printf(" ");
+        }
+        printf("\n");
+    }
+}
+
+
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+    srand((unsigned int)time(NULL));
+    sizex = 10;
+    sizey = 10;
+    initField();
+    printField();
     return 0;
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED1752D3228DCFF20038DFBD /* FieldManager.c in Sources */ = {isa = PBXBuildFile; fileRef = ED1752D2228DCFF20038DFBD /* FieldManager.c */; };
+		ED1752D6228DD0010038DFBD /* TimeManager.c in Sources */ = {isa = PBXBuildFile; fileRef = ED1752D5228DD0010038DFBD /* TimeManager.c */; };
+		ED1752E2228DE30F0038DFBD /* DisplayManager.c in Sources */ = {isa = PBXBuildFile; fileRef = ED1752E1228DE30F0038DFBD /* DisplayManager.c */; };
 		ED6C6370228DC70A0022309F /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = ED6C636F228DC70A0022309F /* main.c */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		ED1752D1228DCFF20038DFBD /* FieldManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldManager.h; sourceTree = "<group>"; };
+		ED1752D2228DCFF20038DFBD /* FieldManager.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = FieldManager.c; sourceTree = "<group>"; };
+		ED1752D4228DD0010038DFBD /* TimeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeManager.h; sourceTree = "<group>"; };
+		ED1752D5228DD0010038DFBD /* TimeManager.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TimeManager.c; sourceTree = "<group>"; };
+		ED1752D7228DD08B0038DFBD /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		ED1752D8228DD0BE0038DFBD /* GlobalConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalConfiguration.h; sourceTree = "<group>"; };
+		ED1752E0228DE30F0038DFBD /* DisplayManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayManager.h; sourceTree = "<group>"; };
+		ED1752E1228DE30F0038DFBD /* DisplayManager.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = DisplayManager.c; sourceTree = "<group>"; };
 		ED6C636C228DC70A0022309F /* FireSimulator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FireSimulator; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6C636F228DC70A0022309F /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,6 +49,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED1752DF228DE1E40038DFBD /* Header files */ = {
+			isa = PBXGroup;
+			children = (
+				ED1752D7228DD08B0038DFBD /* main.h */,
+				ED1752D1228DCFF20038DFBD /* FieldManager.h */,
+				ED1752D4228DD0010038DFBD /* TimeManager.h */,
+				ED1752E0228DE30F0038DFBD /* DisplayManager.h */,
+				ED1752D8228DD0BE0038DFBD /* GlobalConfiguration.h */,
+			);
+			path = "Header files";
+			sourceTree = "<group>";
+		};
 		ED6C6363228DC70A0022309F = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +81,10 @@
 			isa = PBXGroup;
 			children = (
 				ED6C636F228DC70A0022309F /* main.c */,
+				ED1752D2228DCFF20038DFBD /* FieldManager.c */,
+				ED1752D5228DD0010038DFBD /* TimeManager.c */,
+				ED1752E1228DE30F0038DFBD /* DisplayManager.c */,
+				ED1752DF228DE1E40038DFBD /* Header files */,
 			);
 			path = FireSimulator;
 			sourceTree = "<group>";
@@ -118,6 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED1752D3228DCFF20038DFBD /* FieldManager.c in Sources */,
+				ED1752D6228DD0010038DFBD /* TimeManager.c in Sources */,
+				ED1752E2228DE30F0038DFBD /* DisplayManager.c in Sources */,
 				ED6C6370228DC70A0022309F /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +271,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL9396WK65;
+				GCC_NO_COMMON_BLOCKS = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -250,6 +281,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL9396WK65;
+				GCC_NO_COMMON_BLOCKS = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
