@@ -12,5 +12,6 @@
 #include "FieldManager.h"
 #include "GlobalConfiguration.h"
 #include "DisplayManager.h"
+#include "TimeManager.h"
 
 #endif /* main_h */

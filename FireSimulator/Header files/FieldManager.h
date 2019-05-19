@@ -10,6 +10,15 @@
 #define FieldManager_h
 
 #include "GlobalConfiguration.h"
+#include "DisplayManager.h"
+#include "TimeManager.h"
 
 Element dropElement(void);
+void setSize(Forest * forest);
+void initField(Forest * forest);
+void customizeField(Forest * forest);
+void setFireStart(Forest * forest);
+void changeFireSource(Forest * forest);
+void editField(Forest * forest);
+void createField(Forest * forest);
 #endif /* FieldManager_h */

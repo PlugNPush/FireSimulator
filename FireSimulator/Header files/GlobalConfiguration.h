@@ -20,6 +20,12 @@ typedef struct Element {
     int state;
 }Element;
 
-// At state + 1, it is ashes. above, it is extinguished ashes.
+typedef struct Forest {
+    Element field[500][500];
+    int firex;
+    int firey;
+    int sizex;
+    int sizey;
+}Forest;
 
 #endif /* GlobalConfiguration_h */

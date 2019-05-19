@@ -10,5 +10,8 @@
 #define TimeManager_h
 
 #include "GlobalConfiguration.h"
-
+void setTime(Forest * forest);
+void tplus(int num, Forest * forest);
+void tequal(int num, Forest * forest);
+void resetTime(Forest * forest);
 #endif /* TimeManager_h */
