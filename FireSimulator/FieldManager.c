@@ -34,7 +34,14 @@ Element dropElement(){
     }
 }
 
-Element getElement(int drop){
+Element setElement(Element e, int drop){
+    
+    Element ground = {0, 0, e.state};
+    Element grass = {1, 3, e.state};
+    Element tree = {2, 4, e.state};
+    Element Leaf = {3, 2, e.state};
+    Element rock = {4, 5, e.state};
+    Element water = {5, 0, e.state};
     
     if (drop == 0) {
         return ground;
@@ -95,8 +102,8 @@ void customizeField(Forest * forest){
             printf("Enter the element you want to place (0 - ground / 1 - grass / 2 - tree / 3 - leaf / 4 - rock / [5 - water]): ");
             scanf("%d", &elem);
 //
-            forest->field[posx][posy] = getElement(elem);
-            emergencyPrint(forest->field, forest->sizex, forest->sizey);
+            forest->field[posx][posy] = setElement(forest->field[posx][posy], elem);
+            printField(forest->field, forest->sizex, forest->sizey);
 //
             printf("Do you want to continue customizing? (y/[n]): ");
             fpurge(stdin);
@@ -117,8 +124,8 @@ void editField(Forest * forest){
         printf("Enter the element you want to place (0 - ground / 1 - grass / 2 - tree / 3 - leaf / 4 - rock / [5 - water]): ");
         scanf("%d", &elem);
             //
-        forest->field[posx][posy] = getElement(elem);
-        emergencyPrint(forest->field, forest->sizex, forest->sizey);
+        forest->field[posx][posy] = setElement(forest->field[posx][posy], elem);
+        printField(forest->field, forest->sizex, forest->sizey);
             //
         printf("Do you want to continue editing? (y/[n]): ");
         fpurge(stdin);
@@ -138,9 +145,9 @@ void changeFireSource(Forest * forest){
 void createField(Forest * forest){
     setSize(forest);
     initField(forest);
-    emergencyPrint(forest->field, forest->sizex, forest->sizex);
+    printField(forest->field, forest->sizex, forest->sizex);
     customizeField(forest);
     setFireStart(forest);
     setTime(forest);
-    emergencyPrint(forest->field, forest->sizex, forest->sizex);
+    printField(forest->field, forest->sizex, forest->sizex);
 }

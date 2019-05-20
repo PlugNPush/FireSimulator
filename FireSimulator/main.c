@@ -43,8 +43,9 @@ void menu(Forest * forest){
             menu(forest);
             break;
     }
-    
-    emergencyPrint(forest->field, forest->sizex, forest->sizex);
+    int t0 = forest->field[forest->firex][forest->firey].state;
+    printf("t=%d\n", t0);
+    printField(forest->field, forest->sizex, forest->sizex);
     menu(forest);
     
 }

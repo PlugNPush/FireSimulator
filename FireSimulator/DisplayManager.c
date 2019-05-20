@@ -45,7 +45,7 @@ void printElement(Element e){
     }
 }
 
-void printField(Forest forest){
+void standardPrint(Forest forest){
     int i, j;
     for (i = 0; i < forest.sizex; i++) {
         for (j = 0; j < forest.sizey; j++) {
@@ -67,7 +67,7 @@ void extractStateField(Forest forest){
     }
 }
 
-void emergencyPrint(Element field[][500], int sizex, int sizey){
+void printField(Element field[][500], int sizex, int sizey){
     int i, j;
     for (i = 0; i < sizex; i++) {
         for (j = 0; j < sizey; j++) {
