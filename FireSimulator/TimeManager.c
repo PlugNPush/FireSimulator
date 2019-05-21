@@ -24,8 +24,8 @@ int computeTime(int firex, int firey, int posx, int posy){
 
 void setTime(Forest * forest){
     int i, j;
-    for (i = 0; i < forest->sizex; i++) {
-        for (j = 0; j < forest->sizey; j++) {
+    for (i = 0; i < 500; i++) {
+        for (j = 0; j < 500; j++) {
             forest->field[i][j].state = computeTime(forest->firex, forest->firey, i, j);
         }
     }
@@ -33,8 +33,8 @@ void setTime(Forest * forest){
 
 void tplus(int num, Forest * forest){
     int i, j;
-    for (i = 0; i < forest->sizex; i++) {
-        for (j = 0; j < forest->sizey; j++) {
+    for (i = 0; i < 500; i++) {
+        for (j = 0; j < 500; j++) {
             forest->field[i][j].state = forest->field[i][j].state + num;
         }
     }

@@ -9,14 +9,15 @@
 
 #include "Header files/FieldManager.h"
 
-Element ground = {0, 0, 0};
-Element grass = {1, 3, 0};
-Element tree = {2, 4, 0};
-Element Leaf = {3, 2, 0};
-Element rock = {4, 5, 0};
-Element water = {5, 0, 0};
-
 Element dropElement(){
+    
+    Element ground = {0, 0, 0};
+    Element grass = {1, 3, 0};
+    Element tree = {2, 4, 0};
+    Element Leaf = {3, 2, 0};
+    Element rock = {4, 5, 0};
+    Element water = {5, 0, 0};
+    
     int drop = rand() % 6;
     
     if (drop == 0) {
@@ -64,12 +65,17 @@ void setSize(Forest * forest){
     scanf("%d", &forest->sizex);
     printf("Now enter the y dim of the field: ");
     scanf("%d", &forest->sizey);
+    
+    if (forest->sizex > 500 || forest->sizey > 500){
+        printf("You must use reasonable values.\n");
+        setSize(forest);
+    }
 }
 
 void initField(Forest * forest){
     int i, j;
-    for (i = 0; i < forest->sizex; i++) {
-        for (j = 0; j < forest->sizey; j++) {
+    for (i = 0; i < 500; i++) {
+        for (j = 0; j < 500; j++) {
             forest->field[i][j] = dropElement();
         }
     }
@@ -105,6 +111,14 @@ void customizeField(Forest * forest){
             scanf("%d", &posx);
             printf("Enter position y [0 - %d]: ", forest->sizey - 1);
             scanf("%d", &posy);
+            
+            if (posx > 500 || posy > 500){
+                printf("You must use reasonable values!\n");
+                confirmation = 'n';
+                editField(forest);
+                return;
+            }
+            
             printf("Enter the element you want to place (0 - ground / 1 - grass / 2 - tree / 3 - leaf / 4 - rock / [5 - water]): ");
             scanf("%d", &elem);
 //
@@ -127,6 +141,14 @@ void editField(Forest * forest){
         scanf("%d", &posx);
         printf("Enter position y [0 - %d]: ", forest->sizey - 1);
         scanf("%d", &posy);
+        
+        if (posx > 500 || posy > 500){
+            printf("You must use reasonable values!\n");
+            confirmation = 'n';
+            editField(forest);
+            return;
+        }
+        
         printf("Enter the element you want to place (0 - ground / 1 - grass / 2 - tree / 3 - leaf / 4 - rock / [5 - water]): ");
         scanf("%d", &elem);
             //
@@ -151,9 +173,13 @@ void changeFireSource(Forest * forest){
 void createField(Forest * forest){
     setSize(forest);
     initField(forest);
-    printField(forest->field, forest->sizex, forest->sizex);
+    printField(forest->field, forest->sizex, forest->sizey);
     customizeField(forest);
     setFireStart(forest);
     setTime(forest);
-    printField(forest->field, forest->sizex, forest->sizex);
+    printField(forest->field, forest->sizex, forest->sizey);
+}
+
+void extendField(Forest * forest){
+    setSize(forest);
 }

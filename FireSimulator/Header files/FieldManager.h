@@ -21,4 +21,5 @@ void setFireStart(Forest * forest);
 void changeFireSource(Forest * forest);
 void editField(Forest * forest);
 void createField(Forest * forest);
+void extendField(Forest * forest);
 #endif /* FieldManager_h */
