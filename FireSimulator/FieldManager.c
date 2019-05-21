@@ -83,6 +83,12 @@ void setFireStart(Forest * forest){
     printf("Enter the fire start position y [0 - %d]: ", forest->sizey - 1);
     scanf("%d", &posy);
     
+    if (forest->field[posx][posy].type == 0 || forest->field[posx][posy].type == 5){
+        printf("You cannot set the fire start on water or ground.\n");
+        setFireStart(forest);
+        return;
+    }
+    
     forest->firex = posx;
     forest->firey = posy;
 }
