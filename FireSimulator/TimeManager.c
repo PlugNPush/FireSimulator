@@ -51,3 +51,51 @@ void resetTime(Forest * forest){
     int reset = 0 - t0;
     tplus(reset, forest);
 }
+
+void getElementInfo(Forest * forest){
+    int posx, posy;
+    
+    fpurge(stdin);
+    printf("Enter position x [0 - %d]: ", forest->sizex - 1);
+    scanf("%d", &posx);
+    printf("Enter position y [0 - %d]: ", forest->sizey - 1);
+    scanf("%d", &posy);
+    
+    if (posx > 500 || posy > 500){
+        printf("You must use reasonable values!\n");
+        getElementInfo(forest);
+        return;
+    }
+    
+    printf("Element: ");
+    printNaturalElement(forest->field[posx][posy]);
+    printf("\n");
+    
+    if(forest->field[posx][posy].type == 0 || forest->field[posx][posy].type == 5){
+        printf("This element is constant.\n");
+    }
+    
+    else if (forest->field[posx][posy].state <= 0){
+        int turn = abs(forest->field[posx][posy].state) + 1;
+        int ash = abs(forest->field[posx][posy].state) + 1 + forest->field[posx][posy].degree;
+        printf("The element will be on fire in %d steps.\n", turn);
+        printf("The element will be ashes in %d steps.\n", ash);
+        printf("The element will be extinguished ashes in %d steps.\n", ash+1);
+    }
+    
+    else if (forest->field[posx][posy].state > 0 && forest->field[posx][posy].state <= forest->field[posx][posy].degree){
+        int ash = (forest->field[posx][posy].degree - (abs(forest->field[posx][posy].state))) + 1;
+        printf("This element is on fire.\n");
+        printf("The element will be ashes in %d steps.\n", ash);
+        printf("The element will be extinguished ashes in %d steps.\n", ash+1);
+    }
+    
+    else if (forest->field[posx][posy].state > 0 && forest->field[posx][posy].state == forest->field[posx][posy].degree + 1){
+        printf("This element is in ashes.\n");
+        printf("The element will be extinguished ashes in 1 step.\n");
+    }
+    
+    else {
+        printf("This element is in extinguished ashes.\n");
+    }
+}

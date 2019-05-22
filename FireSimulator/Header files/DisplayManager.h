@@ -11,6 +11,7 @@
 
 #include "GlobalConfiguration.h"
 void printElement(Element e);
+void printNaturalElement(Element e);
 void standardPrint(Forest forest);
 void printField(Element field[][500], int sizex, int sizey);
 void extractStateField(Forest forest);

@@ -11,7 +11,7 @@
 
 void menu(Forest * forest){
     int* choice = malloc(sizeof(int));
-    printf("To control time by t+x, enter 1. To control time by t=x, enter 2. To edit an element, enter 3. To reset the board, enter 4. To change the fire source, enter 5. To change the size of the field, enter 6. To exit, enter 7: ");
+    printf("To control time by t+x, enter 1. To control time by t=x, enter 2. To edit an element, enter 3. To reset the board, enter 4. To change the fire source, enter 5. To change the size of the field, enter 6. To get informations about an element of the field, enter 7. To exit, enter 8: ");
     scanf("%d", choice);
     
     switch (*choice) {
@@ -44,6 +44,10 @@ void menu(Forest * forest){
             extendField(forest);
             break;
         case 7:
+            free(choice);
+            getElementInfo(forest);
+            break;
+        case 8:
             free(choice);
             return;
             break;

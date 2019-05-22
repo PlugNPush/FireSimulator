@@ -45,6 +45,32 @@ void printElement(Element e){
     }
 }
 
+void printNaturalElement(Element e){
+    switch (e.type) {
+        case 0:
+            printf("🛤️");
+            break;
+        case 1:
+            printf("🌿");
+            break;
+        case 2:
+            printf("🌴");
+            break;
+        case 3:
+            printf("🍂");
+            break;
+        case 4:
+            printf("🗿");
+            break;
+        case 5:
+            printf("🌊");
+            break;
+            
+        default:
+            break;
+    }
+}
+
 void standardPrint(Forest forest){
     int i, j;
     for (i = 0; i < forest.sizex; i++) {
