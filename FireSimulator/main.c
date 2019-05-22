@@ -56,6 +56,7 @@ void menu(Forest * forest){
             free(choice);
             printf("Error in selection.\n");
             menu(forest);
+            return;
             break;
     }
     int* t0 = malloc(sizeof(int));
