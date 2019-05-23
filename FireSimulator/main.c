@@ -11,6 +11,7 @@
 
 void menu(Forest * forest){
     int* choice = malloc(sizeof(int));
+    fpurge(stdin);
     printf("To control time by t+x, enter 1. To control time by t=x, enter 2. To edit an element, enter 3. To reset the board, enter 4. To change the fire source, enter 5. To change the size of the field, enter 6. To get informations about an element of the field, enter 7. To exit, enter 8: ");
     scanf("%d", choice);
     
